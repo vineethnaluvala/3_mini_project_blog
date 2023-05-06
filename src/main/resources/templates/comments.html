@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>new post</title>
+ <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+
+<style>
+#register {
+	text-align: center;
+	background: white;
+}
+
+div {
+	width: 1000px;
+	margin: 0 auto;
+}
+#box{
+
+background : white;
+}
+.navbarbg-dark{
+
+	background : lightgrey;
+	
+
+}
+</style>
+</head>
+<body>
+<div id = "box">
+		<div class="form-group" id="register">
+			<h1>Enter Comment</h1>
+		</div>
+		<p th:text="${msg}" class="text-success">
+		<p th:text="${errmsg}" class="text-danger">
+		<form>
+
+
+			<div class="form-group">
+				
+				<input type="text"
+					class="form-control" id="title" aria-describedby="emailHelp"
+					placeholder="Enter Name" >
+			</div>
+			<div class="form-group">
+				 <input type="text" cols="140" rows="3" 
+					class="form-control" id="title" aria-describedby="emailHelp"
+					placeholder="Enter Email" >
+			</div>
+			<div class="form-group">
+				
+				
+				<textarea name="paragraph_text" cols="140" rows="3" 
+				class="form-control" id="content"
+				 placeholder="Enter Comment">
+				 </textarea>
+				
+			</div>
+
+			<button type="submit" class="btn btn-primary">Submit</button>
+
+		</form>
+	</div>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>new post</title>
+ <link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+
+<style>
+#register {
+	text-align: center;
+	background: white;
+}
+
+div {
+	width: 1000px;
+	margin: 0 auto;
+}
+#box{
+
+background : white;
+}
+.navbarbg-dark{
+
+	background : lightgrey;
+	
+
+}
+</style>
+</head>
+<body>
+
+<nav class="
+navbarbg-dark" data-bs-theme="dark">
+  
+  
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  
+  <a class="navbar-brand" href="#">Vini Blog App</a>
+   <a class="navbar-brand" href="viewposts">View posts</a>
+    <a class="navbar-brand" href="/">logout</a>
+  	
+  
+ </nav>
+</nav>
+
+	<div id = "box">
+		<div class="form-group" id="register">
+			<h1>create post</h1>
+		</div>
+		<p th:text="${msg}" class="text-success">
+		<p th:text="${errmsg}" class="text-danger">
+		<form th:action="@{/createpost}" th:object="${form}" method="post">
+
+
+			<div class="form-group">
+				<label for="exampleInputTitle">Title</label> <input type="text"
+					class="form-control" id="title" aria-describedby="emailHelp"
+					placeholder="Enter title" th:field="*{title}">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputdesc">short description</label> 
+				
+				<textarea name="paragraph_text" cols="140" rows="3" 
+				class="form-control" id = "description"
+				 placeholder="enter post short description" 
+				 th:field="*{description}">
+				 </textarea>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputcontent">content</label>
+				
+				<textarea name="paragraph_text" cols="140" rows="3" 
+				class="form-control" id="content"
+				 placeholder="enter content" 
+				 th:field="*{content}">
+				 </textarea>
+				
+			</div>
+
+			<button type="submit" class="btn btn-primary">Post</button>
+
+		</form>
+	</div>
+
+
+
+</body>
+</html>
+

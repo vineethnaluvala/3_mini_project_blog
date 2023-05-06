@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vini blog</title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+	crossorigin="anonymous">
+
+<style>
+.footer {
+
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: black;
+	color: white;
+	text-align: center;
+	margin :10px;
+	}
+#allposts{
+
+width: 1000px;
+	margin: 0 auto;
+
+}
+#search {
+		float: right;
+			margin-right: 80px;
+}
+</style>
+</head>
+<body>
+
+
+	<div id="container">
+
+		<nav class="navbar bg-dark" data-bs-theme="dark">
+
+
+			<nav class="navbar navbar-expand-lg bg-body-tertiary">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="#">Vini Blog App</a>
+					<button class="navbar-toggler" type="button"
+						data-bs-toggle="collapse" data-bs-target="#navbarText"
+						aria-controls="navbarText" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarText">
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item"><a class="nav-link active"
+								aria-current="page" href="/">All posts</a></li>
+							<li class="nav-item"><a class="nav-link" href="signup">Register</a>
+							</li>
+							<li class="nav-item"><a class="nav-link" href="login">Login</a>
+							</li>
+						</ul>
+						<span class="navbar-text"> </span>
+					</div>
+				</div>
+			</nav>
+
+		</nav>
+
+	</div>
+
+
+
+	</div>
+
+
+<form class="d-flex" role="search" id="search">
+	<div class="card bg-light mb-3" >
+		<div class="card-header">
+			<h5>
+				search for blogs
+			</h5>
+		</div>
+		<div class="card-body">
+			<p class="card-text">
+		<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			<button class="btn btn-outline-success" type="submit">Search</button>
+			</p>
+		</div>
+		</div>
+</form>
+		
+		
+<div id = "allposts">
+	<div class="card bg-light mb-3" style="max-width: 48rem;" th:each="post : ${msg}">
+		<div class="card-header">
+			<h5>
+				<a href=""><span th:text="${post.title}"></span></a>
+			</h5>
+			<div>
+				<b th:text="${post.createdDate}"></b>
+			</div>
+		</div>
+
+		<div class="card-body">
+
+			<p class="card-text">
+				<span th:text="${post.description}"></span><a href="content">readmore</a>
+			</p>
+		</div>
+	
+		
+
+	</div>
+</div>
+</body>
+<div class="footer">
+	<p>© 2023 Copyright: @Vini</p>
+</div>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
